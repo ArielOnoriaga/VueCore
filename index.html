@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miniframework</title>
+</head>
+<body>
+  <div id="app">
+    <span f-text="message"></span>
+    <br>
+    <br>
+    <input type="text" f-model="message">
+    <br>
+    <br>
+    <input f-bind:type="inputType">
+  </div>
+
+  <script src="./frame.js"> </script>
+  <script type="text/javascript">
+    const { createApp } = Frameworks;
+
+    const app = createApp({
+      info: () => ({
+        message: 'Esto funciona de verdad?',
+        inputType: 'checkbox'
+      })
+    });
+
+    app.mount();
+  </script>
+</body>
+</html>
